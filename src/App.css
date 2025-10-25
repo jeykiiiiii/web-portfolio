@@ -1,0 +1,21 @@
+/* App.css */
+.theme-fallback {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.dark-fallback {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(41, 15, 34, 0.8) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(76, 29, 61, 0.6) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(165, 55, 87, 0.4) 0%, transparent 50%);
+}
+
+.light-fallback {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(187, 187, 255, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(135, 206, 235, 0.3) 0%, transparent 50%);
+}

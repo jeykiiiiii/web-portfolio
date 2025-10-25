@@ -1,0 +1,163 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* New Color Scheme based on your image */
+    --background: 0 0% 100%;          /* White */
+    --foreground: 240 10% 3.9%;       /* Almost black */
+
+    --card: 0 0% 100%;               /* White */
+    --card-foreground: 240 10% 3.9%; /* Almost black */
+
+    --popover: 0 0% 100%;            /* White */
+    --popover-foreground: 240 10% 3.9%; /* Almost black */
+
+    /* Primary colors from your image */
+    --primary: 336 48% 20%;          /* #4C1D3D - Dark Purple */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 340 47% 45%;        /* #A33757 - Medium Purple */
+    --secondary-foreground: 0 0% 100%; /* White */
+
+    --muted: 340 47% 95%;            /* Light version of secondary */
+    --muted-foreground: 340 47% 45%; /* #A33757 */
+
+    --accent: 355 65% 55%;           /* #DC586D - Coral Red */
+    --accent-foreground: 0 0% 100%;  /* White */
+
+    --destructive: 0 84.2% 60.2%;    /* Red */
+    --destructive-foreground: 0 0% 98%; /* White */
+
+    --border: 340 47% 90%;           /* Light border */
+    --input: 340 47% 95%;            /* Light input */
+    --ring: 336 48% 20%;             /* #4C1D3D */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;      /* Dark background */
+    --foreground: 0 0% 98%;          /* Light text */
+
+    --card: 240 10% 3.9%;           /* Dark card */
+    --card-foreground: 0 0% 98%;    /* Light text */
+
+    --popover: 240 10% 3.9%;        /* Dark popover */
+    --popover-foreground: 0 0% 98%; /* Light text */
+
+    --primary: 355 65% 65%;         /* Lighter coral for dark mode */
+    --primary-foreground: 0 0% 100%; /* White */
+
+    --secondary: 340 47% 55%;       /* Lighter purple for dark mode */
+    --secondary-foreground: 0 0% 100%; /* White */
+
+    --muted: 240 3.7% 15.9%;        /* Dark muted */
+    --muted-foreground: 240 5% 64.9%; /* Gray text */
+
+    --accent: 15 85% 75%;           /* #FFBB94 - Peach for accents */
+    --accent-foreground: 240 5.9% 10%; /* Dark text */
+
+    --destructive: 0 62.8% 30.6%;   /* Dark destructive */
+    --destructive-foreground: 0 0% 98%; /* Light text */
+
+    --border: 240 3.7% 15.9%;       /* Dark border */
+    --input: 240 3.7% 15.9%;        /* Dark input */
+    --ring: 355 65% 65%;            /* Coral ring */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+/* Add these animations to your index.css */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-20px) translateX(15px);
+  }
+  66% {
+    transform: translateY(15px) translateX(-10px);
+  }
+}
+
+@keyframes cloud-float {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px);
+  }
+  50% {
+    transform: translateX(30px) translateY(-15px);
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(-100px) translateY(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes rocket {
+  0% {
+    transform: translateX(-100px) translateY(0px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-100px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes bird-fly {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(15px) translateY(-8px);
+  }
+  50% {
+    transform: translateX(30px) translateY(0px);
+  }
+  75% {
+    transform: translateX(15px) translateY(8px);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 20s ease-in-out infinite;
+}
+
+.animate-cloud-float {
+  animation: cloud-float 25s ease-in-out infinite;
+}
+
+.animate-shooting-star {
+  animation: shooting-star 10s linear infinite;
+}
+
+.animate-rocket {
+  animation: rocket 15s linear infinite;
+}
+
+.animate-bird-fly {
+  animation: bird-fly 8s ease-in-out infinite;
+}
