@@ -89,7 +89,7 @@ const About = () => {
           transition={{ delay: 0.1 }}
           className="text-foreground/60 text-center mb-12 max-w-2xl mx-auto"
         >
-        Frontend developer passionate about crafting meaningful digital experiences through thoughtful design and clean code.
+        Hey there! I’m Jake, a tech enthusiast and student who loves learning by building. I enjoy experimenting with code, designing simple systems, and turning small ideas into working applications. Every project I make helps me grow and discover something new about technology.
         </motion.p>
 
         <div className="max-w-6xl mx-auto">
