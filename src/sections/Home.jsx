@@ -8,7 +8,7 @@ const Home = () => {
   const [displayText, setDisplayText] = useState("");
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const iframeRef = useRef(null);
-  const fullText = "Web Application Developer";
+  const fullText = "Student/Gamer/Developer in Progress";
   
   // Typewriter effect
   useEffect(() => {
