@@ -6,17 +6,6 @@ const Footer = () => {
           <div className="text-foreground/60 mb-4 md:mb-0">
             © 2024 Jake Marlon Destura. All rights reserved.
           </div>
-          <div className="flex space-x-6">
-            {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-foreground/60 hover:text-foreground transition-colors text-sm"
-              >
-                {item}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

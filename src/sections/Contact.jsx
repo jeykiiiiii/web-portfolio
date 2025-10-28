@@ -1,9 +1,8 @@
-// Contact.jsx
 import { Card, CardContent } from "../components/ui/card.jsx";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Facebook } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -15,6 +14,32 @@ const Contact = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Your actual contact information
+  const contactInfo = {
+    email: "desturajakemarlon@gmail.com",
+    phone: "09561581530",
+    location: "Las Pinas City, Philippines"
+  };
+
+  // Your social links
+  const socialLinks = [
+    { 
+      name: "GitHub", 
+      icon: Github, 
+      url: "https://github.com/Jeykiiiiii" 
+    },
+    { 
+      name: "LinkedIn", 
+      icon: Linkedin, 
+      url: "https://www.linkedin.com/in/jake-marlon-destura-1b7b14396/" 
+    },
+    { 
+      name: "Facebook", 
+      icon: Facebook, 
+      url: "https://www.facebook.com/jeykiiiiii/" 
+    }
+  ];
 
   const handleChange = (e) => {
     setFormData({
@@ -63,7 +88,7 @@ const Contact = () => {
           viewport={{ once: false, margin: "-50px" }}
           className="text-3xl md:text-4xl font-bold text-center mb-4"
         >
-          Get In Touch
+          Let’s Connect
         </motion.h2>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +97,7 @@ const Contact = () => {
           transition={{ delay: 0.1 }}
           className="text-foreground/60 text-center mb-12 max-w-2xl mx-auto"
         >
-          Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
+          Got an idea? Let’s explore how we can make it happen together.
         </motion.p>
 
         <motion.div 
@@ -96,7 +121,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-foreground/60">john.doe@example.com</p>
+                      <p className="text-foreground/60">{contactInfo.email}</p>
                     </div>
                   </motion.div>
 
@@ -109,7 +134,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Phone</h3>
-                      <p className="text-foreground/60">+1 (555) 123-4567</p>
+                      <p className="text-foreground/60">{contactInfo.phone}</p>
                     </div>
                   </motion.div>
 
@@ -122,7 +147,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Location</h3>
-                      <p className="text-foreground/60">New York, NY</p>
+                      <p className="text-foreground/60">{contactInfo.location}</p>
                     </div>
                   </motion.div>
                 </CardContent>
@@ -134,16 +159,22 @@ const Contact = () => {
               <Card className="border-2 hover:border-primary/20 transition-colors">
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-4">Follow Me</h3>
-                  <div className="flex space-x-4">
-                    {["GitHub", "LinkedIn", "Twitter"].map((platform) => (
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    {socialLinks.map((social) => (
                       <motion.div
-                        key={platform}
+                        key={social.name}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1"
+                        className="flex-1 min-w-0"
                       >
-                        <Button variant="outline" size="sm" className="w-full">
-                          {platform}
+                        <Button 
+                          variant="outline" 
+                          size="sm" 
+                          className="w-full gap-2 px-3"
+                          onClick={() => window.open(social.url, '_blank')}
+                        >
+                          <social.icon size={16} />
+                          <span className="truncate">{social.name}</span>
                         </Button>
                       </motion.div>
                     ))}

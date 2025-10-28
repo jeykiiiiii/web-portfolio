@@ -1,6 +1,5 @@
-// About.jsx
 import { Card, CardContent } from "../components/ui/card.jsx";
-import { Code, Palette, Database, Smartphone, Award, Calendar } from "lucide-react";
+import { Code, Palette, Database, Smartphone, Award, School } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -9,60 +8,52 @@ const About = () => {
 
   const skills = [
     { name: 'Frontend', icon: Code, items: [
-      { name: 'React', level: 90 },
-      { name: 'JavaScript', level: 85 },
-      { name: 'TypeScript', level: 80 },
-      { name: 'HTML/CSS', level: 95 }
+      { name: 'React', level: 40 },
+      { name: 'JavaScript', level: 40 },
+      { name: 'TypeScript', level: 20 },
+      { name: 'HTML/CSS', level: 60 }
     ]},
     { name: 'UI/UX', icon: Palette, items: [
-      { name: 'TailwindCSS', level: 90 },
-      { name: 'Figma', level: 75 },
-      { name: 'shadcn/ui', level: 85 },
-      { name: 'Responsive Design', level: 95 }
+      { name: 'TailwindCSS', level: 30 },
+      { name: 'Figma', level: 30 },
+      { name: 'shadcn/ui', level: 20 },
+      { name: 'Responsive Design', level: 40 }
     ]},
     { name: 'Backend', icon: Database, items: [
-      { name: 'Node.js', level: 80 },
-      { name: 'Express', level: 75 },
-      { name: 'MongoDB', level: 70 },
-      { name: 'REST APIs', level: 85 }
+      { name: 'Node.js', level: 40 },
+      { name: 'MongoDB', level: 30 },
+      { name: 'REST APIs', level: 40 },
     ]},
     { name: 'Mobile', icon: Smartphone, items: [
-      { name: 'React Native', level: 75 },
-      { name: 'Expo', level: 70 },
-      { name: 'PWA', level: 80 }
+      { name: 'React Native', level: 10 },
+      { name: 'Flutter', level: 10 }
     ]},
-  ];
-
-  const experiences = [
-    {
-      title: "Frontend Developer",
-      company: "Tech Corp",
-      period: "2022 - Present",
-      description: "Developed and maintained web applications using React and TypeScript.",
-      achievements: ["Improved performance by 40%", "Led a team of 3 developers", "Implemented CI/CD pipeline"]
-    },
-    {
-      title: "Web Developer Intern",
-      company: "Startup Inc",
-      period: "2021 - 2022",
-      description: "Built responsive websites and collaborated with design teams.",
-      achievements: ["Built 10+ client websites", "Reduced load time by 60%", "Implemented responsive designs"]
-    }
   ];
 
   const education = [
     {
-      degree: "BS in Computer Science",
-      school: "University of Technology",
-      period: "2018-2022",
-      gpa: "3.8/4.0",
-      achievements: ["Dean's List", "Tech Club President", "Hackathon Winner"]
+      school: "CVSU – Bacoor Campus",
+      location: "Dona Josefa Ave, Almanza Uno, Las Pinas City",
+      period: "2023-present",
+      description: "Currently pursuing higher education in Computer Science"
     },
     {
-      degree: "Web Development Bootcamp",
-      school: "Code Academy",
-      period: "2021",
-      achievements: ["Top 5% of cohort", "Built 15+ projects", "Mentored 20+ students"]
+      school: "LPCNSHS-Doña Josefa Campus",
+      location: "Dona Josefa Ave, Almanza Uno, Las Pinas City",
+      period: "2019-2021",
+      description: "Senior High School - STEM Strand"
+    },
+    {
+      school: "Golden Acres National High School",
+      location: "Marcos Alvares Avenue Talon I, Las Piñas City",
+      period: "2015-2019",
+      description: "Junior High School"
+    },
+    {
+      school: "Golden Acres-Moonwalk Elementary School",
+      location: "Mansanitas Street Golden Acres Talon I, Las Piñas City",
+      period: "2009-2015",
+      description: "Elementary Education"
     }
   ];
 
@@ -98,8 +89,7 @@ const About = () => {
           transition={{ delay: 0.1 }}
           className="text-foreground/60 text-center mb-12 max-w-2xl mx-auto"
         >
-          Passionate developer with 2+ years of experience creating digital solutions 
-          that make a difference.
+        Frontend developer passionate about crafting meaningful digital experiences through thoughtful design and clean code.
         </motion.p>
 
         <div className="max-w-6xl mx-auto">
@@ -113,8 +103,7 @@ const About = () => {
           >
             {[
               { id: 'skills', label: 'Skills', icon: Award },
-              { id: 'experience', label: 'Experience', icon: Calendar },
-              { id: 'education', label: 'Education', icon: Award }
+              { id: 'education', label: 'Education', icon: School }
             ].map((tab) => (
               <motion.button
                 key={tab.id}
@@ -193,16 +182,16 @@ const About = () => {
                 </motion.div>
               )}
 
-              {activeTab === 'experience' && (
+              {activeTab === 'education' && (
                 <motion.div
-                  key="experience"
+                  key="education"
                   variants={tabContentVariants}
                   initial="hidden"
                   animate="visible"
                   exit="exit"
                   className="space-y-6"
                 >
-                  {experiences.map((exp, index) => (
+                  {education.map((edu, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -30 }}
@@ -212,75 +201,21 @@ const About = () => {
                     >
                       <Card className="border-2 hover:border-primary/30 transition-all duration-300 bg-background/80 backdrop-blur-sm">
                         <CardContent className="p-8">
-                          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                            <div className="flex-1">
-                              <h3 className="font-semibold text-xl text-primary">{exp.title}</h3>
-                              <p className="text-foreground/80 font-medium">{exp.company}</p>
-                              <p className="text-foreground/60 text-sm mt-1">{exp.period}</p>
-                              <p className="mt-4 text-foreground/70">{exp.description}</p>
-                              
-                              <div className="mt-4 space-y-2">
-                                {exp.achievements.map((achievement, achIndex) => (
-                                  <motion.div
-                                    key={achIndex}
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: index * 0.2 + achIndex * 0.1 + 0.5 }}
-                                    className="flex items-center gap-3 text-sm"
-                                  >
-                                    <div className="w-2 h-2 bg-accent rounded-full"></div>
-                                    {achievement}
-                                  </motion.div>
-                                ))}
+                          <div className="flex flex-col gap-4">
+                            <div className="flex items-start gap-4">
+                              <motion.div 
+                                whileHover={{ scale: 1.1 }}
+                                className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0"
+                              >
+                                <School className="text-primary" size={24} />
+                              </motion.div>
+                              <div className="flex-1">
+                                <h3 className="font-semibold text-xl text-primary mb-1">{edu.school}</h3>
+                                <p className="text-foreground/80 font-medium text-sm mb-2">{edu.location}</p>
+                                <p className="text-foreground/60 text-sm mb-3">{edu.period}</p>
+                                <p className="text-foreground/70">{edu.description}</p>
                               </div>
                             </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
-
-              {activeTab === 'education' && (
-                <motion.div
-                  key="education"
-                  variants={tabContentVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                >
-                  {education.map((edu, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.2 }}
-                      whileHover={{ y: -5 }}
-                    >
-                      <Card className="border-2 hover:border-primary/30 transition-all duration-300 bg-background/80 backdrop-blur-sm h-full">
-                        <CardContent className="p-6">
-                          <h3 className="font-semibold text-lg text-primary mb-2">{edu.degree}</h3>
-                          <p className="text-foreground/80 font-medium">{edu.school}</p>
-                          <p className="text-foreground/60 text-sm mb-4">{edu.period}</p>
-                          {edu.gpa && (
-                            <p className="text-foreground/70 mb-4">GPA: {edu.gpa}</p>
-                          )}
-                          
-                          <div className="space-y-2">
-                            {edu.achievements.map((achievement, achIndex) => (
-                              <motion.div
-                                key={achIndex}
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: index * 0.2 + achIndex * 0.1 + 0.3 }}
-                                className="flex items-center gap-3 text-sm text-foreground/70"
-                              >
-                                <Award size={16} className="text-accent" />
-                                {achievement}
-                              </motion.div>
-                            ))}
                           </div>
                         </CardContent>
                       </Card>

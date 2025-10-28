@@ -1,9 +1,36 @@
-// Projects.jsx
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card.jsx";
 import { Button } from "../components/ui/button";
 import { ExternalLink, Github, ArrowLeft, ArrowRight, Filter, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+// Queue Management System Images
+import qms1 from "../assets/projects/qms1.png";
+import qms2 from "../assets/projects/qms2.png";
+import qms3 from "../assets/projects/qms3.png";
+import qms4 from "../assets/projects/qms4.png";
+import qms5 from "../assets/projects/qms5.png";
+import qms6 from "../assets/projects/qms6.png";
+import qms7 from "../assets/projects/qms7.png";
+
+// Student Tracker Images
+import sdbms1 from "../assets/projects/sdbms1.png";
+import sdbms2 from "../assets/projects/sdbms2.png";
+import sdbms3 from "../assets/projects/sdbms3.png";
+import sdbms4 from "../assets/projects/sdbms4.png";
+import sdbms5 from "../assets/projects/sdbms5.png";
+import sdbms6 from "../assets/projects/sdbms6.png";
+import sdbms7 from "../assets/projects/sdbms7.png";
+
+// Coffee Menu Images
+import cm1 from "../assets/projects/cm1.png";
+import cm2 from "../assets/projects/cm2.png";
+import cm3 from "../assets/projects/cm3.png";
+import cm4 from "../assets/projects/cm4.png";
+
+// One Piece Images
+import op1 from "../assets/projects/op1.png";
+import op2 from "../assets/projects/op2.png";
 
 const Projects = () => {
   const [currentProject, setCurrentProject] = useState(0);
@@ -20,15 +47,7 @@ const Projects = () => {
       features: ["Real-time Queue Updates", "Admin Dashboard", "Customer Notifications", "Queue Analytics", "Multi-branch Support", "Priority Queue System"],
       category: "fullstack",
       status: "completed",
-      images: [
-        "/src/assets/projects/qms1.png",
-        "/src/assets/projects/qms2.png",
-        "/src/assets/projects/qms3.png",
-        "/src/assets/projects/qms4.png",
-        "/src/assets/projects/qms5.png",
-        "/src/assets/projects/qms6.png",
-        "/src/assets/projects/qms7.png"
-      ]
+      images: [qms1, qms2, qms3, qms4, qms5, qms6, qms7]
     },
     {
       title: "Student Tracker",
@@ -38,15 +57,7 @@ const Projects = () => {
       features: ["Student Profiles Management", "Enrollment", "Grade Management", "Performance Analytics", "Report Generation"],
       category: "fullstack",
       status: "completed",
-      images: [
-        "/src/assets/projects/sdbms1.png",
-        "/src/assets/projects/sdbms2.png",
-        "/src/assets/projects/sdbms3.png",
-        "/src/assets/projects/sdbms4.png",
-        "/src/assets/projects/sdbms5.png",
-        "/src/assets/projects/sdbms6.png",
-        "/src/assets/projects/sdbms7.png"
-      ]
+      images: [sdbms1, sdbms2, sdbms3, sdbms4, sdbms5, sdbms6, sdbms7]
     },
     {
       title: "Coffee Menu",
@@ -57,12 +68,7 @@ const Projects = () => {
       features: ["Online Ordering System", "Menu Customization"],
       category: "frontend",
       status: "completed",
-      images: [
-        "/src/assets/projects/cm1.png",
-        "/src/assets/projects/cm2.png",
-        "/src/assets/projects/cm3.png",
-        "/src/assets/projects/cm4.png"
-      ]
+      images: [cm1, cm2, cm3, cm4]
     },
     {
       title: "One Piece",
@@ -73,10 +79,7 @@ const Projects = () => {
       features: ["User Registration", "Basic Form Validation", "Game Launch (Under Development)"],
       category: "frontend",
       status: "in progress",
-      images: [
-        "/src/assets/projects/op1.png",
-        "/src/assets/projects/op2.png"
-      ]
+      images: [op1, op2]
     }
   ];
 
@@ -178,7 +181,7 @@ const Projects = () => {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="h-64 lg:h-auto flex items-center justify-center overflow-hidden relative group bg-muted"
               >
-                {/* Project Image */}
+                {/* Project Image - Now using imported image */}
                 <img 
                   src={project.images[0]} 
                   alt={`${project.title} screenshot`}
@@ -328,46 +331,51 @@ const Projects = () => {
             </div>
           </Card>
 
-          {/* Project Navigation */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="flex justify-between items-center mt-8"
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="outline" onClick={prevProject} className="gap-3 rounded-full px-6">
-                <ArrowLeft size={18} />
-                Previous
-              </Button>
-            </motion.div>
-            
-            <div className="flex items-center gap-4">
-              <span className="text-sm text-foreground/60">
-                {currentProject + 1} of {filteredProjects.length}
-              </span>
-              <div className="flex space-x-2">
-                {filteredProjects.map((_, index) => (
-                  <motion.button
-                    key={index}
-                    onClick={() => setCurrentProject(index)}
-                    whileHover={{ scale: 1.3 }}
-                    whileTap={{ scale: 0.8 }}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentProject ? "bg-accent" : "bg-muted-foreground/30"
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
+          {/* Project Navigation - Fixed Responsive Version */}
+<motion.div 
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.8 }}
+  className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8"
+>
+  {/* Previous Button - Left aligned */}
+  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="order-2 sm:order-1">
+    <Button variant="outline" onClick={prevProject} className="gap-3 rounded-full px-4 sm:px-6 w-full sm:w-auto">
+      <ArrowLeft size={18} />
+      <span className="hidden sm:inline">Previous</span>
+      <span className="sm:hidden">Prev</span>
+    </Button>
+  </motion.div>
+  
+  {/* Page Indicator - Center */}
+  <div className="flex flex-col sm:flex-row items-center gap-3 order-1 sm:order-2">
+    <span className="text-sm text-foreground/60 whitespace-nowrap">
+      {currentProject + 1} of {filteredProjects.length}
+    </span>
+    <div className="flex space-x-2">
+      {filteredProjects.map((_, index) => (
+        <motion.button
+          key={index}
+          onClick={() => setCurrentProject(index)}
+          whileHover={{ scale: 1.3 }}
+          whileTap={{ scale: 0.8 }}
+          className={`w-3 h-3 rounded-full transition-colors ${
+            index === currentProject ? "bg-accent" : "bg-muted-foreground/30"
+          }`}
+        />
+      ))}
+    </div>
+  </div>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="outline" onClick={nextProject} className="gap-3 rounded-full px-6">
-                Next
-                <ArrowRight size={18} />
-              </Button>
-            </motion.div>
-          </motion.div>
+      {/* Next Button */}
+      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="order-3">
+        <Button variant="outline" onClick={nextProject} className="gap-3 rounded-full px-4 sm:px-6 w-full sm:w-auto">
+          <span className="hidden sm:inline">Next</span>
+          <span className="sm:hidden">Next</span>
+          <ArrowRight size={18} />
+        </Button>
+      </motion.div>
+    </motion.div>
         </div>
       </div>
 
