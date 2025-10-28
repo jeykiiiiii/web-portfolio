@@ -21,13 +21,6 @@ A modern and responsive **web portfolio application** built to showcase personal
 - **Version Control:** Git & GitHub  
 
 ---
-
-## 📸 Preview
-
-> Add a screenshot of your project here (optional)
-
-![Portfolio Screenshot](./preview.png)
-
 ---
 
 ## ⚙️ Installation and Setup
