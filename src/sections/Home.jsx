@@ -108,8 +108,7 @@ const Home = () => {
             >
               I’m a <span className="text-primary font-semibold">student and tech enthusiast</span> passionate about technology, gaming, and creative problem-solving. 
               A math wizard and logic lover at heart, I enjoy exploring how systems work, 
-              building projects that challenge my thinking, and continuously learning new skills. 
-              Also, a proud dog lover.
+              building projects that challenge my thinking, and continuously learning new skills. Exort Trionis!
             </motion.p>
 
             <motion.div 
