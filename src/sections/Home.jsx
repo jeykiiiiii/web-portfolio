@@ -102,15 +102,16 @@ const Home = () => {
               </h2>
             </motion.div>
             
-            <motion.p 
+               <motion.p 
               variants={itemVariants}
               className="text-base sm:text-lg text-foreground/60 mb-8 lg:mb-12 leading-relaxed"
             >
-              I create <span className="text-primary font-semibold">responsive web applications</span> using modern technologies 
-              like React, TailwindCSS, and Node.js. Passionate about writing clean code 
-              and crafting user-centered digital experiences.
+              I’m a <span className="text-primary font-semibold">student and tech enthusiast</span> passionate about technology, gaming, and creative problem-solving. 
+              A math wizard and logic lover at heart, I enjoy exploring how systems work, 
+              building projects that challenge my thinking, and continuously learning new skills. 
+              Also, a proud dog lover.
             </motion.p>
-            
+
             <motion.div 
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center mb-12 lg:mb-16"
