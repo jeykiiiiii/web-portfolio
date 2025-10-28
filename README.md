@@ -17,7 +17,7 @@ A modern and responsive **web portfolio application** built to showcase personal
 ## 🛠️ Technologies Used
 
 - **Frontend:** React.js, Tailwind CSS, Framer Motion  
-- **Hosting:** Netlify / Vercel / GitHub Pages  
+- **Hosting:** Netlify / GitHub Pages  
 - **Version Control:** Git & GitHub  
 
 ---
