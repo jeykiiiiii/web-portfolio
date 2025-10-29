@@ -32,16 +32,16 @@ const About = () => {
 
   const education = [
     {
-      school: "CVSU – Bacoor Campus",
-      location: "Dona Josefa Ave, Almanza Uno, Las Pinas City",
+      school: "Cavite State University – Bacoor Campus",
+      location: "Sampaguita, Soldiers IV, Bacoor, Cavite",
       period: "2023-present",
-      description: "Currently pursuing higher education in Computer Science"
+      description: "Bachelor of Science in Computer Science"
     },
     {
       school: "LPCNSHS-Doña Josefa Campus",
       location: "Dona Josefa Ave, Almanza Uno, Las Pinas City",
       period: "2019-2021",
-      description: "Senior High School - STEM Strand"
+      description: "Senior High School - ABM Strand"
     },
     {
       school: "Golden Acres National High School",
